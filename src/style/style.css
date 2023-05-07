@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100200300400500600700800900&display=swap");
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: grabbing;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+body .blur-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(22.5px);
+          backdrop-filter: blur(22.5px);
+  /* Note: backdrop-filter has minimal browser support */
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+body .background-anim {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+body .content-left-wrapper {
+  position: absolute;
+  width: 599px;
+  height: 340px;
+  left: 216px;
+  top: 309px;
+}
+body .content-left-wrapper .hero-text-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  color: #E9E9E9;
+}
+body .content-left-wrapper .hero-text-paragraph {
+  left: 216px;
+  top: 427px;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 171.2%;
+  color: #CFCFCF;
+}
+body .content-left-wrapper .footer {
+  position: absoulte;
+  width: 520px;
+  height: 20px;
+}
+body .content-left-wrapper .footer p, body .content-left-wrapper .footer span {
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(207, 207, 207, 0.5);
+  margin-right: 5px;
+}
+body .content-left-wrapper .footer #footer-text-bold {
+  font-weight: 700;
+}
+body .content-left-wrapper .footer img {
+  position: relative;
+  margin-left: 5px;
+  top: 3px;
+}
+body .data-container-wrapper {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  overflow: scroll;
+  left: 1205px;
+  top: 400px;
+}
+body .data-container-wrapper .story-container {
+  position: relative;
+  box-sizing: border-box;
+  width: 470px;
+  height: 240px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 100px;
+  margin-top: 20px;
+  background-image: url("img/div-stroke.svg");
+  background-repeat: no-repeat;
+}
+body .data-container-wrapper .story-container .date-published {
+  position: relative;
+  width: 180px;
+  height: 10px;
+  left: 24px;
+  top: 21px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 12px;
+  color: #DEDEDE;
+}
+body .data-container-wrapper .story-container .story-author {
+  position: relative;
+  width: 100px;
+  height: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 7px;
+  line-height: 8px;
+  color: rgba(222, 222, 222, 0.5);
+  left: 200px;
+  top: 3px;
+}
+body .data-container-wrapper .story-container .story-title {
+  position: relative;
+  width: 418px;
+  height: 50px;
+  left: 24px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #DEDEDE;
+  overflow: hidden;
+}
+body .data-container-wrapper .story-container .story-desc {
+  position: relative;
+  width: 418px;
+  height: 66px;
+  left: 24px;
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #DEDEDE;
+}
+body .data-container-wrapper .story-container .url {
+  position: relative;
+  z-index: 1;
+  background-image: url(img/read-full.svg);
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  left: 24px;
+  transform: scale(1);
+  transition: transform 2s;
+}
+body .data-container-wrapper .story-container .url:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 3px #5590E6);
+}
+body .data-container-wrapper .story-container span {
+  position: relative;
+  width: 110px;
+  height: 12px;
+  left: 34px;
+  top: -7px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(222, 222, 222, 0.2);
+}
+body .data-container-wrapper .story-container:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=style.css.map */
